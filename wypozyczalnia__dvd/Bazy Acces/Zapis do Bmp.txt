@@ -1,0 +1,13 @@
+Aby po klikniêciu przycisku Button1 ca³y obszar formularza (pasek tytu³u, menu, obszar u¿ytkownika i suwaki) zosta³ zapisany do pliku jako bitmapa tworzymy w funkcji obs³ugujšcej zdarzenie OnClick przycisku Button1 nowy obiekt typu TBitmap (bitmapa), wywo³ujemy funkcjê Windows API CreateCompatibleBitmap(), która tworzy bitmapê zwišzanš z tzw. kontekstem urzšdzenia, podajšc jako argumenty uchwyt do kontekstu urzšdzenia (u nas do ca³ego obszaru formularza), szeroko?æ i wysoko?æ bitmapy w pikselach, nastêpnie funkcjš Windows API BitBlt() kopiujemy zawarto?æ kontekstu urzšdzenia do bitmapy FormBitmap i zapisujemy jš do pliku funkcjš SaveToFile podajšc jako argument ?cie¿kê dostêpu do pliku (nale¿y zwróciæ uwagê na podwójny backslash oddzielajšcy katalogi):
+
+Unit1.cpp 
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+    Graphics::TBitmap *FormBitmap = new Graphics::TBitmap();
+     FormBitmap->Handle = CreateCompatibleBitmap(GetWindowDC(Handle), Width, Height);
+     BitBlt(FormBitmap->Canvas->Handle, 0, 0, FormBitmap->Width, FormBitmap
+    ->Height,GetWindowDC(Handle), 0, 0, SRCCOPY); 
+     FormBitmap->SaveToFile("c:\\canvas.bmp"); 
+
+     delete FormBitmap; 
+}
