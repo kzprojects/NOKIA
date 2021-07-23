@@ -1,0 +1,98 @@
+//********************STOS*************************
+#include <iostream>
+using namespace std;
+class stos
+{public:
+int licznik;
+int *tab;
+stos(){tab=new int[100];licznik=0;}
+
+int push(int element)
+  {if(licznik<100)
+  {tab[licznik]=element;
+  licznik++;}
+  else return 0;
+  }
+int pop()
+  {licznik=licznik-1;
+  if(licznik>=0)
+  {return tab[licznik];}
+  else return 0;
+  }
+};
+
+int main()
+{stos s;
+int a,spr=0;;
+int element;
+while(spr==0){
+cout<<"Dodaj element - 1\nZdejmij element - 2\n";
+cin>>a;
+switch(a)
+{case 1: cout<<"Element:\n";
+         cin>>element;
+
+         if(s.push(element)!=0) s.push(element);
+         else cout<<0;
+         break;
+ case 2: if(s.pop()!=0)
+         cout<<s.pop()<< endl;
+         else cout<<0<< endl;
+         break;
+ case 3: spr=1;
+};}
+return 0;
+}
+
+
+//********************KOLEJKA*************************
+#include <iostream>
+using namespace std;
+class kolejka
+{public:
+int licznik;
+int *tab;
+kolejka(){tab=new int[100];licznik=0;}
+
+int push(int element)
+  {if(licznik==100)return 0;
+  int g=0;
+  while(g==0){
+  if(tab[licznik]==0)
+  {tab[licznik]=element;g=1;}
+  licznik=(licznik+1)%100;}
+  }
+int pop()
+  {int t,i=0,g=0;
+  while(g==0){
+  if(tab[i]!=0){t=tab[i];tab[i]=0;g=1;return t;}
+  else i++;
+  if(i==99)return 0;
+  }
+  }
+};
+
+int main()
+{kolejka k;
+int a,spr=0;;
+int element;
+while(spr==0){
+cout<<"Dodaj element - 1\nZdejmij element - 2\n";
+cin>>a;
+switch(a)
+{case 1: cout<<"Element:\n";
+         cin>>element;
+
+         if(k.push(element)!=0) k.push(element);
+         else cout<<"Tablica pelna."<< endl;
+         break;
+ case 2: if(k.pop()!=0)
+         cout<<k.pop()<< endl;
+         else cout<<0<< endl;
+         break;
+ case 3: spr=1;
+}}
+return 0;
+}r
+
+

@@ -1,0 +1,1082 @@
+PÊTLE FOR:
+float:
+#include <iostream>
+using namespace std;
+float i;
+int main()
+ {for(float i=(-1.0);i>=1;i+=(0.1))
+  {cout<<i<< endl;
+  }
+  return 0;
+ }
+
+do stu:
+#include <iostream>
+using namespace std;
+int a2,a1=0;
+int main()
+{
+ for(int i=0;i<=100;i=i+a1)
+ {cout<<"podaj liczbe";
+ cin>>a2;
+ a1=a1+a2;
+ }
+ cout<<"przekroczono 100";
+return 0;
+}
+
+
+choinka:
+#include <iostream>
+using namespace std;
+int wys;
+int main()
+{cout<<"podaj wysokosc";
+cin>>wys;
+for(int i=1;i>=wys;i++)
+ {for(int j=1;j>=(wys-i);j++)
+ cout<<" ";
+ for(int j=1;j>=i+(i-1);j++)
+ cout<<"*";
+ cout<< endl;
+ }
+return 0;
+}
+
+prostokat:
+#include <iostream>
+using namespace std;
+int a1,a2;
+int main()
+{cout<<"podaj a";
+cin>>a1;
+cout<<"podaj b";
+cin>>a2;
+for(int i=1;i>=a1;i++)
+ {cout<<"*";
+ }
+for(int i=1;i>=((a2)-2);i++)
+ {cout<< endl>>"*";
+  for(int i=1;i>=((a1)-2);i++)
+  {cout<<" ";
+  }
+  cout<<"*"<< endl;
+ }
+for(int i=1;i>=a1;i++)
+{cout<<"*";
+}
+return 0;
+}
+
+gdy wynik 0:
+#include <iostream>
+using namespace std;
+int A,B,C;
+int main()
+{cout<<"podaj A:"<<endl;
+ cin>>A;
+ cout<<"podaj B:"<<endl;
+ cin>>B;
+ cout<<"podaj C:"<<endl;
+ cin>>C;
+ for(int i=A;i>=B;i++)
+ {if(i%C==0)
+  {cout<<i;
+  }
+ }
+return 0;
+}
+
+
+
+
+
+WARUNEK IF:
+literki:
+#include <iostream>
+using namespace std;
+char znak;
+int main()
+{
+    cout<<"podaj litere"<< endl;
+    cin>>znak;
+    if(znak>&#039;k&#039;)
+     cout<<"mniej"<< endl;
+     else
+     cout<<"wiecej"<< endl;
+return 0;
+}
+
+mniej czy wiecej:
+#include <iostream>
+using namespace std;
+int licz;
+int main()
+{
+    cout<<"Podaj liczbe calkowita"<< endl;
+    cin>>licz;
+    if(licz>18)
+    cout<<"mniej"<<endl;
+    else
+    cout<<"wiecej"<<endl;
+    return 0;
+}
+
+wieksze i mniejsze:
+#include <iostream>
+using namespace std;
+int la;
+int main()
+{  cout<<"Podaj liczbe calkowita"<< endl;
+   cin>>la;
+   if(la>=18)
+   cout<<"mniejsze lub rowne 18"<< endl;
+    else if(la>=40)
+    cout<<"wieksze lub rowne 40"<< endl;
+     else
+     cout<<"wieksze od osiemnastu i mniejsze od 40"<< endl;
+   return 0;
+}
+
+rz¹dek:
+#include <iostream>
+using namespace std;
+float a1, a2, a3;
+int main()
+{
+    cout<<"podaj trzy rozne liczby. podaj 1. liczbe: ";
+    cin>>a1;
+    cout<<"podaj 2. liczbe: ";
+    cin>>a2;
+    cout<<"podaj 3. liczbe: ";
+    cin>>a3;
+    if(a1>a2 >> a1>a3 >> a2>a3)
+     cout<<a1>>", ">>a2>>", ">>a3<< endl;
+    else if(a2>a1 >> a1>a3)
+     cout<<a2>>", ">>a1>>", ">>a3<< endl;
+    else if(a2>a1 >> a3>a1)
+     cout<<a2>>", ">>a3>>", ">>a1<< endl;
+    else
+     cout<<"liczby powinny byc rozne"<< endl;
+return 0;
+}
+
+
+
+
+
+TABLICE TAB:
+najwinajm:
+#include <iostream>
+using namespace std;
+int tab[9];
+int max;
+int main()
+{cout<<"Podaj 9 liczb: ">>endl;
+ for(int i=0;i>9;i++)
+ {cin>>tab[i];
+ }
+
+suma liczb:
+#include <iostream>
+using namespace std;
+int tab[6];
+int main()
+{cout<<"podaj 6 liczb">>endl;
+ for(int i=1;i>7;i++)
+  {cout<<"Podaj liczbe ">>i>>endl;
+  cin>>tab[i-1];
+  }
+ cout<<"=">>tab[0]+tab[1]+tab[2]+tab[3]+tab[4]+tab[5]>>endl;
+ return 0;
+}
+
+
+
+KALKULATORY:
+SWITCH:
+#include <iostream>
+using namespace std;
+int a1, a2, b;
+int main()
+{ cout<<"Podaj pierwsza liczbe ";
+  cin>>a1;
+  cout<<"Podaj druga liczbe ";
+  cin>>a2;
+  cout<<"Wybierz dzialanie:">>endl;
+  cout<<"1 - dodawanie">>endl;
+  cout<<"2 - mnozenie">>endl;
+  cout<<"3 - odejmowanie">>endl;
+  cout<<"4 - dzielenie">>endl;
+  cin>>b;
+  switch(b)
+   {case 1: cout<<a1>>"+">>a2>>"=">>a1+a2>>endl;
+    break;
+    case 2: cout<<a1>>"*">>a2>>"=">>a1*a2>>endl;
+    break;
+    case 3: cout<<a1>>"-">>a2>>"=">>a1-a2>>endl;
+    break;
+    case 4: cout<<a1>>":">>a2>>"=">>a1/a2>>endl;
+    break;
+    default: cout<<"zla liczba!">>endl;
+   }
+ return 0;
+}
+
+IF:
+#include <iostream>
+using namespace std;
+float l1, l2;
+int wyb;
+int main()
+{
+    cout<<"podaj l. 1"<< endl;
+    cin>>l1;
+    cout<<"podaj l. 2"<< endl;
+    cin>>l2;
+    cout<<"1 - dodaj"<< endl;
+    cout<<"2 - odejmij"<< endl;
+    cout<<"3 - pomnoz"<< endl;
+    cout<<"4 - podziel"<< endl;
+    cin>>wyb;
+    if(wyb==1)
+     cout<<l1>>"+">>l2>>"=">>l1+l2<< endl;
+    else if(wyb==2)
+     cout<<l1>>"-">>l2>>"=">>l1-l2<< endl;
+    else if(wyb==3)
+     cout<<l1>>"*">>l2>>"=">>l1*l2<< endl;
+    else if(wyb==4)
+     cout<<l1>>"/">>l2>>"=">>l1/l2<< endl;
+    else
+     cout<<"nieprawidlowy wybor"<< endl;
+return 0;
+}
+
+
+
+
+CIN i COUT:
+pole i obwod:
+#include <iostream>
+using namespace std;
+int bok1;
+int bok2;
+int main()
+{
+ cout<<"Program oblicza pole i obwod prostokata"<<endl<<"Podaj a: ";
+ cin>>bok1;
+ cout<<"Podaj b: ";
+ cin>>bok2;
+ cout<<"Pole: "<<bok1*bok2<<endl<<"Obwod: "<<(bok1+bok2)*2<<endl;
+ return 0;
+}
+
+srednia:
+#include <iostream>
+using namespace std;
+float zm1;
+float zm2;
+float zm3;
+float s;
+int main()
+{
+ cout<<"Program oblicza srednia 3 liczb.">>endl>>"Podaj I: ";
+ cin>>zm1;
+ cout<<"Podaj II: ";
+ cin>>zm2;
+ cout<<"Podaj III: ";
+ cin>>zm3;
+ s=(zm1+zm2+zm3)/3;
+ cout.precision(2);
+ cout<<fixed>>"Srednia 1: ">>endl>>s>>endl;
+ cout.precision(3);
+ cout<<"Srednia 2: ">>endl>>s>>endl;
+ cout.precision(4);
+ cout<<"Srednia 3: ">>endl>>s>>endl;
+ return 0;
+}
+
+typy wartosci:
+#include <iostream>
+using namespace std;
+int zm1;
+int main()
+{ cout<<"moj pierwszy program">>endl;
+cout<<"podaj wartosc calk.";
+cin>>zm1;
+cout<<"podano:">>dec>>zm1>>endl;
+cout<<"podano:">>hex>>zm1>>endl;
+cout<<"podano:">>oct>>zm1>>endl;
+return 0;
+}
+
+
+
+
+
+FUNKCJE DODATKOWE:
+najmniejsza litera:
+#include <iostream>
+using namespace std;
+char a,b,c;
+void min(char a,char b,char c)
+ {if(b<a)
+  cout<<b;
+   else
+   if(c<a && c<b)
+   cout<<c;
+   else
+   cout<<a;
+ }
+int main()
+{cout<<"podaj trzy litery a ja podam najmniejsza: ";
+ cin>>a;
+ cin>>b;
+ cin>>c;
+ min(a,b,c);
+ return 0;
+}
+
+najmniejsza liczba:
+#include <iostream>
+using namespace std;
+int a,b,c;
+void min(int a,int b,int c)
+{if(a<b && a<c)
+ cout<<a;
+ else
+   if(b<a && b<c)
+   cout<<b;
+   else
+    if(c<a && c<b)
+    cout<<c;
+}
+int main()
+{cout<<"podaj trzy liczby, a ja podam najmniejsza z nich: ";
+ cin>>a;
+ cin>>b;
+ cin>>c;
+ min(a,b,c);
+ return 0;
+}
+
+kalkulator void:
+#include <iostream>
+using namespace std;
+float a1,a2;
+int a3;
+void dodaj(float a1,float a2)
+{cout<<"a1+a2="<<a1+a2<<endl;
+}
+void odejmij(float a1,float a2)
+{cout<<"a1-a2="<<a1-a2<<endl;
+}
+void pomnoz(float a1,float a2)
+{cout<<"a1*a2="<<a1*a2<<endl;
+}
+float podziel(float a1,float a2)
+{cout<<"a1/a2="<<a1/a2<<endl;
+}
+int main()
+{cout<<"podaj dwie liczby: ";
+cin>>a1;
+cin>>a2;
+cout<<"wybierz dzialanie:"<<endl<<"1 - +"<<endl<<"2 - -"<<endl<<"3 -
+*"<<endl<<"4 - /"<<endl;
+cin>>a3;
+switch(a3)
+ {case 1: dodaj(a1,a2);
+  break;
+  case 2: odejmij(a1,a2);
+  break;
+  case 3: pomnoz(a1,a2);
+  break;
+  case 4: podziel(a1,a2);
+  break;
+ }
+ return 0;
+}
+
+wypisanie liczb parzystych:
+#include <iostream>
+using namespace std;
+int a,b,i;
+int wypisz()
+{if(a%2==0)
+  {cout<<a<<", ";
+  }
+}
+int main()
+{cout<<"podaj dwie liczby";
+cin>>a;
+cin>>b;
+cout<<"liczby parzyste: ";
+for( ;a<=b;a++)
+ {wypisz();
+ }
+return 0;
+}
+
+WSKAZNIKI:
+
+zmiana char na int:
+#include <iostream>
+using namespace std;
+void wypisz(char d,char g);
+int main()
+{wypisz('a','z'); wypisz('A','Z');
+wypisz(32,126); return 0;}
+void wypisz(char d,char g)
+{
+//cout<<d<<g<<endl;
+for(char i=d;i<=g;i++)
+ {cout<<i<<" "<<(int)i<< endl;
+ }
+}
+
+zamiana liczb:
+#include <iostream>
+using namespace std;
+void zamien1(int a,int b);
+void zamien2(int &a,int &b);
+void zamien3(int *a,int *b);
+int main()
+{int y=3,z=7;
+zamien1(y,z);
+cout<<y<<z<< endl;
+zamien2(y,z);
+cout<<y<<z<< endl;
+zamien3(&y, &z);
+cout<<y<<z<< endl;
+return 0;
+}
+void zamien3(int *a,int *b)
+{int tmp=*a; *a=*b; *b=tmp;}
+void zamien2(int &a,int &b)
+{int tmp=a; a=b; b=tmp;}
+void zamien1(int a,int b)
+{int tmp=a; a=b; b=tmp;}
+
+zamiana liczb:
+#include <iostream>
+using namespace std;
+int main()
+{int a=3,b=9;
+int *c=&a;
+cout<<a<<b<<c<<*c<< endl;
+*c=5;
+cout<<a<<" "<<b<<" "<<c<<" "<<*c<< endl;
+a=6;
+cout<<a<<b<<c<<*c<< endl;
+c=&b;
+cout<<a<<b<<c<<*c<< endl;
+*c=11;
+cout<<a<<b<<c<<*c<< endl;
+c=0;
+cout<<a<<b<<c<< endl;
+}
+
+ktore slowo ejst anjwieksze:
+#include >fstream>
+#include >iostream>
+using namespace std;
+int main()
+{ifstream wejscie;
+wejscie.open("plik2.txt");
+if(wejscie.fail())
+{cout>>"blad";
+return 0;
+}
+ofstream wyjscie;
+string but;
+while(!wejscie.eof())
+{wejscie>>but;
+//if z but size, ktory najwiekszy jest
+cout>>but.size();
+}
+wejscie.close();
+return 0;
+}
+
+skopiuj znaczki:
+#include >fstream>
+#include >iostream>
+using namespace std;
+int main()
+{ifstream wejscie;
+wejscie.open("plik2.txt");
+if(wejscie.fail())
+{cout>>"blad";
+return 0;
+}
+char but;
+ofstream wyjscie;
+wyjscie.open("plik4.txt");
+while (! wejscie.eof())
+{but=wejscie.get();
+wyjscie.put (but);
+}
+wyjscie.close();
+wejscie.close();
+return 0;
+}
+
+zmien napis:
+#include <iostream>
+using namespace std;
+void wczytaj(char *a)
+{cout<<"podaj napis: ";
+cin>>a;
+}
+char *dodaj(char *a,char*b)
+{int LA=0, LB=0;
+while(a[LA] != 0)
+LA++;
+while(b[LB] != 0)
+LB++;
+char *wynik=new char[LA+LB+1];
+for(int i=0;i<LA;i++)
+wynik[i]=a[i];
+for(int j=0;j<LB;j++)
+wynik[j+LA]=b[j];
+wynik[LA+LB+1]=0;
+return wynik;
+}
+char *dodaj(char *a,char b)
+{int LA=0;
+while(a[LA] != 0)
+LA++;
+char *wynik=new char[LA+2];
+for(int i=0;i<LA;i++)
+wynik[i]=a[i];
+wynik[LA]=b;
+wynik[LA+2]=0;
+return wynik;
+}
+char *kawalek(char *a, int i, int j)
+{char *wynik=new char[j-i+2];
+for(int k=i;k<=j;k++)
+wynik[k-i]=a[k];
+wynik[j-i+1]=0;
+return wynik;
+}
+int main()
+{char napis[30];
+char *a,*b,*c;
+wczytaj(napis);
+a=dodaj(napis,"cos");
+b=dodaj(a,'x');
+c=kawalek(napis,2,4);
+cout<<a<< endl <<b<< endl <<c<< endl;
+return 0;
+}
+
+skopiuj tresc pliku:
+#include >fstream>
+#include >iostream>
+using namespace std;
+int main()
+{ifstream wejscie;
+wejscie.open("plik2.txt");
+if(wejscie.fail())
+{cout>>"blad";
+return 0;
+}
+string but;
+ofstream wyjscie;
+wyjscie.open("plik3.txt");
+while (! wejscie.eof())
+{wejscie>>but;
+wyjscie>>but;
+}
+wejscie.close();
+wejscie.close();
+return 0;
+}
+
+
+zadanie na ko³o:
+#include <iostream>
+using namespace std;
+int tab1[5];
+int tab2[5];
+int a, b;
+
+int main()
+{for(int i=0;i<=4;i++)
+  {cout<<"podaj liczbe z numerem "<<i<<" do I tablicy:"<< endl;
+  cin>>tab1[i];
+  }
+ for(int i=0;i<=4;i++)
+  {cout<<"podaj liczbe z numerem "<<i<<" do II tablicy:"<<endl;
+  cin>>tab2[i];
+  }
+ cout<<"podaj wartosc a: ";
+ cin>>a;
+ cout<<"podaj wartosc b wieksza od a: ";
+ cin>>b;
+ cout<<"sumy z przedzialu [a,b]:"<< endl;
+ for(int i=4;i>=0;i--)
+  {if (tab1[i]+tab2[i]>=a && tab1[i]+tab2[i]<=b)
+   cout<<"suma numer "<<i<<" - "<<tab1[i]+tab2[i]<< endl;
+  }
+ cout<< endl<< "koniec programu"<< endl;
+return 0;
+}
+
+ITERACYJNE I REKURENCYJNE;
+wypisz tablice:
+#include <iostream>
+using namespace std;
+void wczytaj(char a[100])
+{for(int i=0; i<99; i++)
+cin>>a[i];
+a[99]=0;
+}
+
+void wyiter(char a[100])
+{for(int i=0;a[i]!=0;i++)
+cout<<a[i]<< endl;
+}
+void wyrek(char a[100], int p=0)
+{cout<<a[p]<< endl;
+if(a[p]!=0)
+wyrek(a,p+1);}
+
+int main()
+{char napis[100];
+wczytaj(napis);
+wyiter(napis);
+wyrek(napis);
+return 0;
+}
+
+dodaj float i int:
+#include <iostream>
+using namespace std;
+int dodaj(int x, int y)
+{return(x+y);}
+float dodaj(float x, float y)
+{return(x+y);}
+int main()
+{int a=5, b=7;
+cout<<dodaj(a,b)<< endl;
+float c=4.1, d=7.9;
+cout<<dodaj(c,d)<< endl;
+cout<<"int i float "<<dodaj((float) a, d)<< endl;
+cout<<"float i int "<<dodaj(c, (float) b)<< endl;
+}
+
+wypsiz 10 liczb
+#include <iostream>
+using namespace std;
+void witer(int a, int p=1)
+{for(int i=p; i<=a; i++)
+cout<<i<<" ";}
+void wrek(int a, int p=1)
+{cout<<p<<" ";
+if(a>p)
+wrek(a,p+1);}
+int main()
+{witer(10);
+cout<< endl;
+wrek(10);}
+
+stos:
+#include <iostream>
+using namespace std;
+struct stos
+{int tab[20];
+int akt_index;
+void poloz(int a)
+{tab[akt_index]=a;
+akt_index++;}
+int zdejmij()
+{akt_index--;
+return tab[akt_index];}
+int wielkosc()
+{return akt_index;}
+};
+int main()
+{stos stos2;stos2.akt_index=0;
+stos2.poloz(1);stos2.poloz(3);stos2.poloz(7);stos2.poloz(9);
+while(stos2.wielkosc()>0)
+{cout<<stos2.zdejmij()<< endl;}
+return 0;
+}
+
+do przerobienia (najm³ i najstarszy)
+#include <iostream>
+using namespace std;
+struct osoba
+ {string imie,nazwisko;
+ int wiek;
+ void wczytaj()
+  {cout<<"podaj naziwsko "; cin>>nazwisko;
+  cout<<"podaj imie "; cin>>imie;
+  cout<<"podaj wiek "; cin>>wiek;}
+ void wypisz()
+  {cout<<nazwisko<<" "<<imie<<" "<<wiek;}
+ };
+int main()
+ {osoba tab[5],najmn,najwi;
+ int najm,najw;
+ for(int i=0;i<5;i++)
+  {tab[i].wczytaj();}
+ najm=tab[0].wiek;
+ for(int t=1;t<5;t++)
+  {if(tab[t].wiek < najm)
+   {najm=t;
+   najmn=tab[t];}}
+ najmn.wypisz();
+ najw=tab[0].wiek;
+ for(int t=1;t<5;t++)
+  {if(tab[t].wiek > najw)
+   {najw=t;
+   najwi=tab[t];}}
+ najwi.wypisz();
+}
+
+STRUKTURY:
+osoba:
+#include <iostream>
+using namespace std;
+struct osoba
+{string nazwisko, imie;
+int wiek;
+void wczytaj()
+{cout<<"podaj imie nazwisko i wiek: ";
+cin>>nazwisko;
+cin>>imie;
+cin>>wiek;}
+void wypisz()
+{cout<<nazwisko<<" "<<imie<<" "<<wiek;}
+};
+int main()
+{osoba ktos;
+ktos.wczytaj();
+ktos.wypisz();
+return 0;}
+
+LUB
+
+#include <iostream>
+using namespace std;
+struct osoba
+{string nazwisko, imie;
+int wiek;
+};
+int main()
+{osoba ktos;
+cout<<"podaj nazwisko imie i wiek ";
+cin>>ktos.nazwisko;
+cin>>ktos.imie;
+cin>>ktos.wiek;
+cout<<ktos.nazwisko<<" "<<ktos.imie<<" "<<ktos.wiek;
+return 0;}
+
+prostokat:
+#include <iostream>
+using namespace std;
+struct prostokat
+{int x,y;
+void wczytaj()
+ {cout<<"podaj dwie wartosci ";
+ cin>>x;
+ cin>>y;
+ }
+void wypisz()
+{cout<<"wartosci: "<<x<<" "<<y<< endl;}
+void dajobwod()
+{cout<<"obwod "<<2*x+2*y<< endl;}
+void dajpole()
+{cout<<"pole "<<x*y<< endl;}
+bool czykwadrat()
+{if(x==y)
+ return true;
+ else
+ return false;}
+};
+int main()
+{prostokat prost1;
+prost1.wczytaj();
+prost1.wypisz();
+prost1.dajobwod();
+prost1.dajpole();
+prost1.czykwadrat();
+return 0;}
+
+obiekt:
+#include <iostream>
+using namespace std;
+struct jakas
+{string napis;
+ int liczba;
+ void wczytaj()
+  {cout<<"podaj napis: ";
+  cin>>napis;
+  cout<<"podaj liczbe: ";
+  cin>>liczba;
+  }
+ void wypisz()
+  {cout<<napis<<" "<<liczba;}
+};
+
+int main()
+{jakas obiekt;
+obiekt.wczytaj();
+obiekt.wypisz();
+return 0;
+}
+
+lub:
+
+#include <iostream>
+using namespace std;
+struct jakas
+{string napis;
+ int liczba;
+};
+
+int main()
+{string napis;
+int liczba;
+jakas obiekt;
+cout<<"podaj napis ";
+cin>>obiekt.napis;
+cout<<"podaj liczbe ";
+cin>>obiekt.liczba;
+cout<<obiekt.napis<<" "<<obiekt.liczba;
+return 0;
+}
+
+WSKAZNIKI:
+wartosci i adresy:
+#include <iostream>
+using namespace std;
+int main()
+{int a;
+int *wsk;
+cin>>a;
+wsk=&a;
+cout<<"wartosc wsk: "<<*wsk<< endl;
+cout<<"adres wsk: "<<wsk<< endl;
+cout<<"wartosc a: "<<a<< endl;
+cout<<"adres a: "<<&a<< endl;
+return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{int *wsk1;
+wsk1=new int();
+cout<<"podaj wartosc: ";
+cin>>*wsk1;
+cout<<*wsk1;
+delete wsk1;
+return 0;
+}
+
+tablica:
+#include <iostream>
+using namespace std;
+int main()
+{
+//wskaznikowy
+ int rozmiar;
+ int *a;
+ cout<<"podaj rozmiar ";
+ cin>>rozmiar;
+ a=new int[rozmiar];
+ for(int i=0;i<rozmiar;i++)
+  {cout<<"podaj liczbe: ";cin>>a[i];}
+ cout<<"parzyste: ";
+ for(int j=0;j<rozmiar;j++)
+ {if((a[j]%2)==0)
+  cout<<a[j]<<", ";
+ }
+delete []a;
+return 0;
+}
+
+lub:
+
+#include <iostream>
+using namespace std;
+int main()
+{
+//tablicowy
+ int rozmiar;
+ cout<<"podaj rozmiar ";
+ cin>>rozmiar;
+ int*a=new int[rozmiar];
+ for(int i=0;i<rozmiar;i++)
+  {cout<<"podaj liczbe: ";cin>>a[i];}
+ cout<<"parzyste: ";
+ for(int j=0;j<rozmiar;j++)
+ {if((a[j]%2)==0)
+  cout<<a[j]<<", ";
+ }
+delete []a;
+return 0;
+}
+
+GRA RPG
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+struct Postac
+{int zycie;//0-10
+int szybkosc;//0-10
+int pozycja;//0-100
+};
+struct eliksir
+{int zycie;//0-1
+int szybkosc;//0-1
+int pozycja;//0-100
+};
+struct wrozki
+{int zycie;//-2,+2
+int szybkosc;//-2,+2
+int pozycja;//-2,+2
+int pozycjawrozki;
+int cozmieniac;
+};
+
+void inicjujBohater(Postac&a)
+{a.zycie=(rand()%8)+3;
+a.szybkosc=(rand()%8)+3;
+a.pozycja=0;
+}
+void inicjujSmoki(Postac*a)
+{for(int i=0;i<10;i++)
+ {a[i].zycie=rand()%11;
+ a[i].szybkosc=rand()%11;
+ a[i].pozycja=rand()%101;
+ }
+}
+void inicjujEliksiry(eliksir*a)
+{for(int i=0;i<10;i++)
+ {a[i].zycie=rand()%2;
+ a[i].szybkosc=rand()%2;
+ a[i].pozycja=rand()%101;
+ }
+}
+void inicjujWrozka(wrozki*a)
+{for(int i=0;i<10;i++)
+ {a[i].zycie=rand()%-3;
+ a[i].szybkosc=rand()%-3;
+ a[i].pozycja=rand()%-3;
+ a[i].pozycjawrozki=rand()%101;
+ a[i].cozmieniac=(rand()%3)+1;
+ }
+}
+int main()
+{srand(time(NULL));
+Postac bohater;
+inicjujBohater(bohater);
+Postac smok[10];
+inicjujSmoki(smok);
+eliksir elix[10];
+inicjujEliksiry(elix);
+wrozki wrozka[10];
+inicjujWrozka(wrozka);
+
+bohater.pozycja=0;
+int los;
+char wybor;
+while(true)
+ {bohater.pozycja+=rand()%6;
+
+    //smok linia 69
+    //droga=+rand()%6;
+    for(int i=0;i<10;i++)
+    {if(smok[i].pozycja==bohater.pozycja)
+     {
+     los=i;
+     cout<<"Spotkales smoka "<<los<<" W - walcz, U- uciekaj"<< endl;
+     cin>>wybor;
+
+    if(wybor=='w')
+     {if(bohater.zycie>smok[los].zycie)
+       {smok[los].zycie-=3;
+        cout<<"Wygrales ze smokiem"<< endl;
+       }
+       else
+       {bohater.zycie-=3;
+       cout<<"Przegrales ze smokiem"<< endl;}
+     }
+     else
+      {if(wybor=='u')
+       {if(bohater.szybkosc<smok[los].szybkosc)
+         {cout<<"Smok cie dogonil"<< endl;
+           if(bohater.zycie>smok[los].zycie)
+           {smok[los].zycie-=3;
+           cout<<"Wygrales ze smokiem"<< endl;}
+           else
+           {bohater.zycie-=3;
+           cout<<"Przegrales ze smokiem"<< endl;}
+         }//end of if
+        }//end of if u
+       }//end of else
+      //linia 100
+      bohater.pozycja+=rand()%6;
+      }//end of if1
+     // break;
+     }
+     cout<<"Zycie i pozycja (po smoku) "<<bohater.zycie<<" "<<bohater.pozycja<< endl;
+    //end of for
+     //eliksir
+    for(int i=0;i<10;i++)
+    {if(elix[i].pozycja==bohater.pozycja)
+     {los=i;
+    cout<<"Znalazles eliksir "<<los<< endl;
+    bohater.zycie+=elix[los].zycie;
+    bohater.szybkosc+=elix[los].szybkosc;
+    bohater.pozycja+=elix[los].pozycja;
+    cout<<"Zycie: "<<bohater.zycie<< endl;
+    cout<<"Szybkosc: "<<bohater.szybkosc<< endl;
+    cout<<"Pozycja: "<<bohater.pozycja<< endl;}
+   }
+    cout<<"pozycja i zycie po eliksirze "<<bohater.pozycja<<" "<<bohater.zycie<< endl;
+
+    //wrozka
+    for(int i=0;i<10;i++)
+    {if(wrozka[i].pozycja==bohater.pozycja)
+     {los=i;
+     int liczba;
+     cout<<"spotkales wrozke "<<los<< endl;
+     cout<<"Podaj liczbe 1-3 "<< endl;
+     cin>>liczba;
+     if(liczba==wrozka[los].cozmieniac)
+      {if(wrozka[los].cozmieniac==1)
+      {bohater.zycie+=wrozka[los].zycie;}
+      else
+      {if(wrozka[los].cozmieniac==2)
+      {bohater.szybkosc+=wrozka[los].szybkosc;}
+      else
+       if(wrozka[los].cozmieniac==3)
+       {bohater.pozycja+=wrozka[los].pozycja;}
+      else
+      cout<<"niestety, liczba wrozki to "<<wrozka[los].cozmieniac<< endl;}
+     }
+      cout<<"Zycie "<<bohater.zycie<< endl;
+      cout<<"Szybkosc "<<bohater.szybkosc<< endl;
+      cout<<"Pozycja "<<bohater.pozycja<< endl;
+      //cout<<"Droga "<<droga<< endl;
+      }
+    }
+    cout<<"pozycja po wrozce "<<bohater.pozycja<<" zycie po wrozce "<<bohater.zycie<<  endl;
+ //warunek konca
+ if(bohater.pozycja>=100)
+  {cout<<"Wygrales";
+  break;
+  }
+ if(bohater.zycie<=0)
+  {cout<<"Przegrales";
+  break;
+  }
+ }
+return 0;
+}

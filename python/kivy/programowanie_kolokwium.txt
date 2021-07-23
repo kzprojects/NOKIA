@@ -1,0 +1,37 @@
+class osoba{
+public:
+string imie, nazwisko;
+int wiek;
+osoba(string i, string n, int w):imie(i),nazwisko(n),wiek(w){};
+};
+//-------------------------------------------
+class pracownik: public osoba{
+public:
+string pesel, stanowisko;
+pracownik(string i, string n, int w, string p, string s):osoba(i,n,w)
+{pesel=p;
+stanowisko=s;};
+};
+//-----------------------------------------------
+class adres{
+public:
+string miasto, ulica, nr_lok;
+adres(string m, string u, string nl):miasto(m), ulica(u), nr_lok(nl){};
+adres(){};
+};
+
+class pracownik: public osoba{
+pulic:
+string pesel, stanowisko;
+adres a;
+pracownik(string i, string n, int w, string p, string s, string m, string u, string nl):osoba(i,n,w),a(m,u,nl)
+{pesel=p;
+stanowisko=s;};
+};
+//-----------------------------------
+pracownik prac1=pracownik("Jan","Kowalski",34,"4566777","kierownik","£Ûdü","Piotrkowska","34");
+cout<<prac1.imie<<prac1.nazwisko<<prac1.wiek<<prac1.pesel<<prac1.stanowisko<<prac1.a.miasto<<prac1.a.ulica<<prac1.a.numer_lok;
+//---------------------------------
+pracownik tab[]={pracownik("","",,"","","","",""), pracownik("","",,"","","","",""),
+pracownik("","",,"","","","","")
+};
