@@ -1,7 +1,4 @@
-
 #include "SpeedyStepper.h"
-
-
 SpeedyStepper::SpeedyStepper()
 {
   //
