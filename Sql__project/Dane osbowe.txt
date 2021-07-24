@@ -1,0 +1,51 @@
+CREATE DATABASE Dane;
+
+
+CREATE TABLE OSOBA (
+    LP           INTEGER NOT NULL,
+    IMIE         VARCHAR(20),
+    NAZWISKO     VARCHAR(20)
+    
+);
+
+CREATE TABLE DANE (
+    LP           INTEGER NOT NULL,
+    ulica        VARCHAR(20),
+    nr_d         INTEGER
+
+);
+
+
+
+/***********************/
+/**** Primary Keys ****/
+/*********************/
+
+
+
+ALTER TABLE OSOBA ADD PRIMARY KEY (LP);
+
+
+
+INSERT INTO OSOBA (LP, IMIE, NAZWISKO) VALUES (1, '£UKASZ', 'NOWAK');
+INSERT INTO OSOBA (LP, IMIE, NAZWISKO) VALUES (2, 'PAWE£', 'JANKOWSKI');
+INSERT INTO OSOBA (LP, IMIE, NAZWISKO) VALUES (3, 'RAFA£', 'NOWICKI');
+INSERT INTO OSOBA (LP, IMIE, NAZWISKO) VALUES (4, 'MARCIN', 'KOWALSKI');
+INSERT INTO OSOBA (LP, IMIE, NAZWISKO) VALUES (5, 'EL¯BIETA', 'MA£ECKA');
+INSERT INTO OSOBA (LP, IMIE, NAZWISKO) VALUES (6, 'MONIKA', 'CISZEK');
+
+COMMIT WORK;
+
+
+INSERT INTO DANE (LP, ulica, nr_d) VALUES (1, 'górna', 1);
+INSERT INTO DANE (LP, ulica, nr_d) VALUES (2, 'dolna', 2);
+INSERT INTO DANE (LP, ulica, nr_d) VALUES (3, 'szeroka', 3);
+INSERT INTO DANE (LP, ulica, nr_d) VALUES (4, 'w¹ska', 3);
+INSERT INTO DANE (LP, ulica, nr_d) VALUES (5, 'd³uga', 4);
+INSERT INTO DANE (LP, ulica, nr_d) VALUES (6, 'krutka', 5);
+
+
+COMMIT WORK;
+
+
+
