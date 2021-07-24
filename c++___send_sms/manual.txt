@@ -1,0 +1,85 @@
+Rysunek 1: Modem GSM USB
+
+I będę mieć do niego dostęp za pomocą połączenia portu szeregowego na moim komputerze.
+
+Sposób, w jaki połączysz swój i uzyskasz do niego dostęp, będzie w dużej mierze zależeć od tego, z czego korzystasz. Można jednak spokojnie założyć, że 99% z nich ujawni jakiś rodzaj portu szeregowego COMS.
+
+O dostępie do portów COM pisałem w poprzednim poście w tej kolumnie. Nie będę powtarzał wszystkich czynności konfiguracyjnych potrzebnych do uruchomienia portu szeregowego; zamiast tego skoncentruję się na poleceniach AT potrzebnych do korzystania z SMS-ów.
+
+Należy jednak pamiętać, że porty szeregowe z poprzedniego artykułu działają na MONO.
+
+Oznacza to, że wszystko, co tam można, można łatwo wykorzystać na przykład na Rasbian, więc możesz użyć RaspberryPi. Jedyną rzeczą, o której musisz pamiętać, jeśli to zrobisz, jest to, że na urządzeniu innym niż Windows porty szeregowe mogą nie być nazwane w ten sam sposób.
+
+Na przykład, w systemie operacyjnym Linux twoim "com1" będzie prawdopodobnie "/dev/ttyS0" lub coś podobnego. Niestety istnieje wiele odmian, więc nie mogę dokładnie powiedzieć, co robisz, a czego nie używasz. Musisz trochę poeksperymentować i poczytać.
+
+Polecenia AT
+Dobra, więc w końcu dochodzimy do sedna tego artykułu.
+
+Jeśli chcesz poeksperymentować przed napisaniem kodu, używam "Putty", aby pokazać przykłady poleceń. Podobne terminale szeregowe będziesz mieć na innych platformach.
+
+Gdy zorientujesz się, z którym portem i w jaki sposób się połączyć, prawdopodobnie zobaczysz tylko pusty ekran. Spróbuj wpisać wielkie „AT” (bez cudzysłowów) i naciśnij Return. Jeśli wszystko działa, powinieneś zobaczyć, jak modem odpowiada „OK”. W zależności od konfiguracji modemu możesz lub nie widzieć, co piszesz.
+
+SMS2
+Rysunek 2: Mój modem odpowiada na „AT” z „OK”
+
+Jeśli nie widzisz, co piszesz, wpisz „ATE1” (ponownie, bez cudzysłowów) i naciśnij Return.
+
+„ATE1” oznacza „Echo uwagi 1.” Historycznie, polecenia zaczynają się od „AT”, ponieważ prosisz modem o zwrócenie uwagi.
+
+Po wprowadzeniu „ATE1” włączysz zdolność modemu do echa wszystkiego, co wpisujesz, a tym samym będziesz mógł zobaczyć, co piszesz.
+
+Wypróbujmy jeszcze kilka poleceń:
+
+SMS3
+Rysunek 3: Różne polecenia informacyjne i ich odpowiedzi
+
+Oto różne polecenia i ich opisy:
+
+„AT+CGMM” otrzymuje opis urządzenia
+„AT + CGMI” otrzymuje informacje o producencie
+„AT+CGMR” otrzymuje wersję producenta
+„AT+CGSN” otrzymuje numer IMEI modemu
+„AT+CIMI” otrzymuje numer „IMSI” karty SIM/subskrybenta
+„AT + CNUM” otrzymuje numer komórki/telefonu dołączony do karty SIM
+W zależności od ustawień producenta i rzeczy, takich jak zabezpieczenia PIN, możesz nie być w stanie odczytać niektórych elementów lub nawet użyć karty SIM bez uprzedniego wprowadzenia kodu PIN.
+
+Jeśli wpiszesz polecenie „zapytanie”, dla cpin.
+
+„AT+CPIN?”
+i naciśnij Return, otrzymasz status informujący o aktualnym statusie PIN karty SIM.
+
+SMS4
+Rysunek 4: Brak pinu na tym urządzeniu
+
+Jeśli powrócisz do stanu „GOTOWE”, używana karta SIM nie ma włączonej ochrony kodem PIN. Jeśli otrzymasz inny, musisz wysłać
+
+AT+CPIN="1234"
+aby wprowadzić kod PIN urządzenia. „1234” musi być w cudzysłowie i musi składać się z 4 cyfr kodu, który chcesz przesłać. Należy jednak wziąć pod uwagę bardzo DUŻE ostrzeżenie. Jeśli potrzebujesz kodu PIN, upewnij się, że masz go dobrze.
+
+Generalnie będziesz mieć TYLKO trzy próby, a jeśli wyczerpiesz wszystkie trzy z tych prób, zablokujesz kartę SIM i wyrenderujesz ją bezużyteczną. Nie będzie żadnego magicznego kodu ani specjalnej wiadomości tekstowej, którą może Ci wysłać Twój operator telefonu, która go „odblokuje”. Będziesz musiał poprosić operatora o przesłanie nowej karty SIM.
+
+Jeśli masz jakieś stare karty SIM, użyj ich do eksperymentów. Możesz nie być w stanie wysyłać SMS-ów za ich pomocą, ale nadal możesz wykonywać ruchy wydawania im poleceń, aby przetestować swój kod.
+
+Ok, więc ostrzeżenia na bok, jak dokładnie wysyłamy SMS-y?
+
+Cóż, tak jak w przypadku każdego innego polecenia modemu, używamy polecenia AT zdefiniowanego przez standard GSM, w tym przypadku „AT+CMGS”. Zanim jednak ci to pokażę, musisz wiedzieć jeszcze jedną rzecz.
+
+„Tryby SMS”
+Podczas wysyłania/odbierania wiadomości SMS przez modem GSM, możesz użyć trybu PDU lub zwykłego tekstu.
+
+Nie będę omawiał trybu PDU w tym poście, ponieważ szczerze mówiąc, potrzebujesz bardzo wielu podstawowych informacji na temat działania sieci GSM. BĘDZIESZ jednak musiał używać trybu PDU, jeśli chcesz wykonywać takie czynności, jak wysyłanie dzwonków, połączonych wiadomości i takich rzeczy, jak wiadomości WAP Push.
+
+W tym poście chcemy po prostu wysyłać proste, pojedyncze wiadomości tekstowe, więc skoncentrujemy się na tym.
+
+Aby przełączyć modem w tryb wprowadzania zwykłego tekstu SMS, musisz użyć funkcji „AT+CGMF”. To polecenie przyjmuje jeden parametr w następujący sposób:
+
+AT+CGMF=0: Przełącz na tryb wejścia PDU
+
+AT+CGMF=1 : Przełącz na tryb wprowadzania zwykłego tekstu
+
+Oznacza to, że zanim zaczniemy wpisywać tekst SMS, musimy użyć wersji =1, aby przełączyć się na odpowiedni tryb:
+
+SMS5
+Rysunek 5: Programowanie SMS za pomocą modemu GSM Ustawienie i sprawdzenie trybu wprowadzania SMS
+
+Jak widać na rysunku 5, ustawiłem tryb wprowadzania zwykłego tekstu; wtedy użyłem sa
