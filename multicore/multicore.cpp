@@ -1,4 +1,4 @@
-//multicore program
+//multicore program //
 #include <iostream>
 #include <cstdlib>
 #include <pthread.h>
